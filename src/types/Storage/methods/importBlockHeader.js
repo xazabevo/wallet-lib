@@ -25,6 +25,7 @@ const importBlockHeader = function importBlockHeader(blockHeader, height) {
     chainStore.mappedBlockHeaderHeights[blockHeight] = blockHeader.hash;
 
     self.announce(EVENTS.BLOCKHEADER, blockHeader);
+    this.lastModified = Date.now();
   }
 };
 module.exports = importBlockHeader;
